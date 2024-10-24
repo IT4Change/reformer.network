@@ -11,7 +11,7 @@ underMaintenance: false
 global:
   image:
     pullPolicy: Always
-    tag: hetzner
+    tag: {{ .StateValues.image_tag }}
 
 backend:
   image:
