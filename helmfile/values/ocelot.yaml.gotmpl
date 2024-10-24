@@ -11,11 +11,11 @@ underMaintenance: false
 global:
   image:
     pullPolicy: Always
-    tag: hetzner
 
 backend:
   image:
     repository: ghcr.io/it4change/reformer.network/backend
+    tag: {{ .StateValues.image_tag }}
   storage: "10Gi"
   env:
     PRODUCTION_DB_CLEAN_ALLOW: "true"
@@ -26,13 +26,16 @@ backend:
 webapp:
   image:
     repository: ghcr.io/it4change/reformer.network/webapp
+    tag: {{ .StateValues.image_tag }}
 
 maintenance:
   image:
     repository: ghcr.io/it4change/reformer.network/maintenance
+    tag: {{ .StateValues.image_tag }}
 
 neo4j:
   image:
     repository: ghcr.io/ocelot-social-community/ocelot-social/neo4j
+    tag: hetzner
   storage: "5Gi"
   storageBackups: "10Gi"
