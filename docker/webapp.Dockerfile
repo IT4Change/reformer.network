@@ -9,16 +9,7 @@ ARG APP_IMAGE_CODE=${APP_IMAGE}:${APP_IMAGE_TAG_CODE}
 ##################################################################################
 FROM $APP_IMAGE_CODE AS code
 
-# copy public constants into the Docker image to brand it
-COPY ./branding/static/ static/
-COPY ./branding/constants/ constants/
-RUN /bin/sh -c 'cd constants && for f in *.ts; do mv -- "$f" "${f%.ts}.js"; done'
-COPY ./branding/locales/html/ locales/html/
-COPY ./branding/assets/styles/imports/ assets/styles/imports/
-COPY ./branding/assets/fonts/ assets/fonts/
-
 # locales
-COPY ./branding/locales/*.json locales/tmp/
 RUN tools/merge-locales.sh
 
 ##################################################################################
