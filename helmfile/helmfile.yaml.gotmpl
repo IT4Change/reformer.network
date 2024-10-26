@@ -3,6 +3,12 @@ environments:
   default:
     values:
       - ./environments/default.yaml.gotmpl
+  staging:
+    values:
+      - ./environments/staging.yaml.gotmpl
+  production:
+    values:
+      - ./environments/production.yaml.gotmpl
 ---
 repositories:
   - name: prometheus-community
