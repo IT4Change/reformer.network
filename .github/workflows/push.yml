@@ -53,8 +53,7 @@ jobs:
           context: .
           push: true
           build-args: |
-              APP_IMAGE_TAG_CODE=hetzner-code
-              APP_IMAGE_TAG_BASE=hetzner-base
+              OCELOT_VERSION=hetzner
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
