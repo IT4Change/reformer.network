@@ -1,5 +1,6 @@
+{{ $branch := env "BRANCH" | default (exec "../scripts/branch.sh" (list) | trim) }}
 {{ $image_tag:= env "IMAGE_TAG" | default (exec "../scripts/image_tag.sh" (list) | trim) }}
 
-domain: reformer-network-staging.roschaefer.de
-namespace: reformer-network-staging
+domain: {{ env "DOMAIN" | default (printf "%s.git.reformer-network.roschaefer.de" $branch ) }}
+namespace: {{ env "NAMESPACE" | default (printf "reformer-network-git-%s" $branch ) }}
 image_tag: {{ $image_tag }}

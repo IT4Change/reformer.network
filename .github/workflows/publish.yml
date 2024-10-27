@@ -1,6 +1,16 @@
 name: publish
 
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      ocelot_version:
+        description: 'Ocelot build image version'
+        required: true
+        type: string
+      deploy:
+        description: 'Whether or not to deploy to the cluster'
+        required: true
+        type: boolean
 
 jobs:
   build-and-push-images:
@@ -38,13 +48,13 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=ref,event=branch
-            type=ref,event=pr
-            type=sha
+            type=schedule,prefix=${{ inputs.ocelot_version }}_
+            type=semver,pattern={{version}},prefix=${{ inputs.ocelot_version }}_
+            type=semver,pattern={{major}}.{{minor}},prefix=${{ inputs.ocelot_version }}_
+            type=semver,pattern={{major}},prefix=${{ inputs.ocelot_version }}_
+            type=ref,event=branch,prefix=${{ inputs.ocelot_version }}_
+            type=ref,event=pr,prefix=${{ inputs.ocelot_version }}_
+            type=sha,prefix=${{ inputs.ocelot_version }}_
       - name: Build and push Docker images
         id: push
         uses: docker/build-push-action@4f58ea79222b3b9dc2c8bbdd6debcef730109a75
@@ -53,13 +63,13 @@ jobs:
           context: .
           push: true
           build-args: |
-              OCELOT_VERSION=hetzner
+              OCELOT_VERSION=${{ inputs.ocelot_version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy-to-kubernetes:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/staging'
+    if: ${{ inputs.deploy }}
     needs: build-and-push-images
     steps:
       - uses: mdgreenwald/mozilla-sops-action@d9714e521cbaecdae64a89d2fdd576dd2aa97056 # v1.6.0
