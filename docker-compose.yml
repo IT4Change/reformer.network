@@ -1,6 +1,6 @@
 services:
   webapp:
-    image: ghcr.io/IT4Change/reformer.network/webapp
+    image: ghcr.io/it4change/reformer.network/webapp
     build:
       context: .
       dockerfile: ./docker/webapp.Dockerfile
@@ -12,13 +12,14 @@ services:
       WEBSOCKETS_URI: ws://localhost:3000/api/graphql
       GRAPHQL_URI: http://backend:4000/
       MAPBOX_TOKEN: "pk.eyJ1IjoiYnVzZmFrdG9yIiwiYSI6ImNraDNiM3JxcDBhaWQydG1uczhpZWtpOW4ifQ.7TNRTO-o9aK1Y6MyW_Nd4g"
+      BADGES_ENABLED: "true"
     ports:
       - 3000:3000
     depends_on:
       - backend
 
   backend:
-    image: ghcr.io/IT4Change/reformer.network/backend
+    image: ghcr.io/it4change/reformer.network/backend
     build:
       context: .
       dockerfile: ./docker/backend.Dockerfile
@@ -26,19 +27,21 @@ services:
       args:
         OCELOT_VERSION: ${OCELOT_VERSION:-master}
     environment:
-      CLIENT_URI: http://localhost:3000
+      CLIENT_URI: http://webapp:3000
       GRAPHQL_URI: http://backend:4000
       NEO4J_URI: bolt://neo4j:7687
       MAPBOX_TOKEN: "pk.eyJ1IjoiYnVzZmFrdG9yIiwiYSI6ImNraDNiM3JxcDBhaWQydG1uczhpZWtpOW4ifQ.7TNRTO-o9aK1Y6MyW_Nd4g"
       JWT_SECRET: "b/&&7b78BF&fv/Vd"
       PRIVATE_KEY_PASSPHRASE: "a7dsf78sadg87ad87sfagsadg78"
+      BADGE_ATTRIBUTION_SERVICE_URL: 'http://badge-lookup:4000/badges'
+      BADGE_ATTRIBUTION_SERVICE_SECRET: 'SOME-SECRET'
     ports:
       - 4000:4000
     depends_on:
       - neo4j
 
   maintenance:
-    image: ghcr.io/IT4Change/reformer.network/maintenance
+    image: ghcr.io/it4change/reformer.network/maintenance
     build:
       context: .
       dockerfile: ./docker/maintenance.Dockerfile
@@ -50,9 +53,51 @@ services:
 
   neo4j:
     image: ghcr.io/ocelot-social-community/ocelot-social/neo4j:master
+    ports:
+      - 7473:7473
+      - 7474:7474
+      - 7687:7687
     environment:
       NEO4J_AUTH: none
       NEO4J_dbms_allow__format__migration: "true"
       NEO4J_dbms_allow__upgrade: "true"
       NEO4J_dbms_security_procedures_unrestricted: algo.*,apoc.*
+
+  database:
+    image: mariadb:10.5
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 100
+    environment:
+      - MARIADB_ALLOW_EMPTY_PASSWORD=1
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
+      - MARIADB_USER=root
+    ports:
+      - 3306:3306
+    volumes:
+      - db_vol:/var/lib/mysql
+
+  badge-lookup:
+    image: ghcr.io/it4change/reformer.network/badge-lookup
+    build:
+      context: ./badgeLookup
+      target: production
+      args:
+        DB_URL: mysql://root:@database:3306/badge-lookup
+    depends_on:
+      database:
+        condition: service_started
+    ports:
+      - 4001:4000
+    environment:
+      NODE_ENV: production
+      DB_URL: mysql://root:@database:3306/badge-lookup
+      SECRET_REQUEST: SOME-SECRET
+      SECRET_SUBMIT: SOME-SECRET
+
+volumes:
+  db_vol:
 
