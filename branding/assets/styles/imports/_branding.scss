@@ -249,8 +249,8 @@ $text-box-width-mobile: 280px;
 @media only screen and (min-width: 1201px) {
   .login-form,
   .registration-slider{
-    width: unset;
-    max-width: unset;
+    width: unset !important;
+    max-width: unset !important;
     padding-left: $text-box-shift-x;
   }
 }
@@ -297,8 +297,7 @@ $text-box-width-mobile: 280px;
     width: $text-box-width-mobile;
   }
   .login-page:before,
-  .registration-page:before,
-  {
+  .registration-page:before {
     font-size: 32px;
   }
   .login-form > article:before,
