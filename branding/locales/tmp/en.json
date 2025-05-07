@@ -10,34 +10,34 @@
   "contribution": {
     "category": {
       "description": {
-        "corona": "Zeitstrahl, rechtliche Hintergründe, Studien, Maßnahmenkritik",
-        "digital_euro": "EZB-Pläne, Social-Credit-Systeme, Quellen zu EU & BIZ",
-        "who": "Internationale Gesundheitsvorschriften (IHR), WHO-Reform, Impfpflicht-Debatten",
-        "monetary_system": "Inflationsschutz, Enteignungsverfahren, historische Beispiele",
-        "basic_rights": "GG-Analyse, Meinungsferiheit, Versammlungsrecht",
-        "justice": "Politische Verfahren, Verfassungsrecht, Verteidigung gegen Repression",
-        "demonstrations": "Rechte bei Demos, Verhalten bei Polizeikontrolle, Infoblätter",
-        "child_protection": "Aufklärung zu Missbrauch, Pädokriminalität, juristische und gesellschaftliche Aufarbeitung",
-        "transhumanism": "Bioethik, KI-Kontrollgesetze, Einfluss globaler Player",
-        "surveillance": "DSGVO, Vorratsdatenspeicherung, Biometrie & Tracking",
-        "education": "Netzwerke wie AAS, Open Society, NetzDG, etc. — Akteure, Strukturen, Finanzierung",
-        "media": "Propagandatechniken, Nudging, Gruppenpsychologie",
-        "ngos": "Netzwerke wie AAS, Open Society, NetzDG, etc. — Akteure, Strukturen, Finanzierung"
+        "corona": "Timeline, legal background, studies, criticism of measures",
+        "digital_euro": "ECB Plans, Social Credit Systems, EU & BIS Sources",
+        "who": "International Health Regulations (IHR), WHO reform, compulsory vaccination debates",
+        "monetary_system": "Inflation protection, expropriation proceedings, historical examples",
+        "basic_rights": "GG (German constitution) analysis, freedom of opinion, right of assembly",
+        "justice": "Political proceedings, constitutional law, defence against repression",
+        "demonstrations": "Rights at demonstrations, behaviour during police checks, information sheets",
+        "child_protection": "Education on abuse, paedophilia, legal and social reappraisal",
+        "transhumanism": "Bioethics, AI control laws, influence of global players",
+        "surveillance": "GDPR, Data Retention, Biometrics & Tracking",
+        "education": "Networks such as AAS, Open Society, NetzDG, etc. — actors, structures, financing",
+        "media": "Propaganda techniques, nudging, group psychology",
+        "ngos": "Networks such as AAS, Open Society, NetzDG, etc. — actors, structures, financing"
       },
       "name": {
-        "corona": "Corona-Aufarbeitung",
-        "digital_euro": "Digitaler Euro (CBDC)",
-        "who": "WHO & Pandemie-Verträge",
-        "monetary_system": "Geldsystem & Vermögensschutz",
-        "basic_rights": "Grundrechte & Demokratie",
-        "justice": "Justiz & Grundsatzurteile",
-        "demonstrations": "Demorecht & Polizei-Kontakt",
-        "child_protection": "Kinderschutz & sexualisierte Gewalt",
-        "transhumanism": "Transhumanismus & KI-Regulierung",
-        "surveillance": "Überwachung & Datenschutz",
-        "education": "Bildung & Indoktrination",
-        "media": "Psychologoe der Massen & Medienkritik",
-        "ngos": "NGOs & Machtstrukturen"
+        "corona": "Corona reappraisal",
+        "digital_euro": "Digital Euro (CBDC)",
+        "who": "WHO & Pandemic Contracts",
+        "monetary_system": "Monetary System & Asset Protection",
+        "basic_rights": "Fundamental Rights & Democracy",
+        "justice": "Justice & Landmark Judgments",
+        "demonstrations": "Right to demonstrate & police contact",
+        "child_protection": "Child Protection & Sexualised Violence",
+        "transhumanism": "Transhumanism & AI Regulation",
+        "surveillance": "Monitoring & Data Protection",
+        "education": "Education & Indoctrination",
+        "media": "Psychology of the Masses & Media Criticism",
+        "ngos": "NGOs & Power Structures"
       }
     }
   }
