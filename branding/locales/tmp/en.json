@@ -22,7 +22,8 @@
         "surveillance": "GDPR, Data Retention, Biometrics & Tracking",
         "education": "Education system, ideology, networks, influence",
         "media": "Propaganda techniques, nudging, group psychology",
-        "ngos": "Networks such as AAS, Open Society, NetzDG, etc. — actors, structures, financing"
+        "ngos": "Networks such as AAS, Open Society, NetzDG, etc. — actors, structures, financing",
+        "miscellaneous": "Miscellaneous"
       },
       "name": {
         "corona": "Corona reappraisal",
@@ -37,7 +38,8 @@
         "surveillance": "Monitoring & Data Protection",
         "education": "Education & Indoctrination",
         "media": "Psychology of the Masses & Media Criticism",
-        "ngos": "NGOs & Power Structures"
+        "ngos": "NGOs & Power Structures",
+        "miscellaneous": "Miscellaneous"
       }
     }
   }

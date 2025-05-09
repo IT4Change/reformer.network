@@ -22,7 +22,8 @@
         "surveillance": "DSGVO, Vorratsdatenspeicherung, Biometrie & Tracking",
         "education": "Bildungssystem, Ideologie, Netzwerke, Einflussnahme",
         "media": "Propagandatechniken, Nudging, Gruppenpsychologie",
-        "ngos": "Netzwerke wie AAS, Open Society, NetzDG, etc. — Akteure, Strukturen, Finanzierung"
+        "ngos": "Netzwerke wie AAS, Open Society, NetzDG, etc. — Akteure, Strukturen, Finanzierung",
+        "miscellaneous": "Sonstiges"
       },
       "name": {
         "corona": "Corona-Aufarbeitung",
@@ -37,7 +38,8 @@
         "surveillance": "Überwachung & Datenschutz",
         "education": "Bildung & Indoktrination",
         "media": "Psychologoe der Massen & Medienkritik",
-        "ngos": "NGOs & Machtstrukturen"
+        "ngos": "NGOs & Machtstrukturen",
+        "miscellaneous": "Sonstiges"
       }
     }
   }
