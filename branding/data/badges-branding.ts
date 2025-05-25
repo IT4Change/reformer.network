@@ -64,6 +64,18 @@ export const trophies = [
     description: 'Hat bei restart-democracy.org mitgemacht',
     icon: '/img/badges/trophy_orange_restart_democracy.svg',
   },
+  {
+    id: 'trophy_blue_interested',
+    type: 'trophy',
+    description: 'Neugier ist eine Tugend',
+    icon: '/img/badges/trophy_blue_interested.svg',
+  },
+  {
+    id: 'trophy_blue_tested',
+    type: 'trophy',
+    description: 'Wollte es wissen',
+    icon: '/img/badges/trophy_blue_tested.svg',
+  },
 ]
 
 export const verification = [
