@@ -25,6 +25,7 @@
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@types/jest": "^29.5.14",
+    "@types/validator": "^13.15.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.24.0",

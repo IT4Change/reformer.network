@@ -55,6 +55,9 @@ const run = async () => {
     file.close()
     stream.close()
   }
+
+  // eslint-disable-next-line no-console
+  console.log('finished')
 }
 
 void run()
