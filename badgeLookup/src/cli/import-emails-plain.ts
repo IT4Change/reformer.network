@@ -1,6 +1,7 @@
 import crypto from 'node:crypto'
 import { createReadStream } from 'node:fs'
 import fs from 'node:fs/promises'
+import path from 'node:path'
 import readline from 'node:readline/promises'
 
 import isEmail from 'validator/lib/isEmail'
@@ -9,7 +10,6 @@ import normalizeEmail from 'validator/lib/normalizeEmail'
 import { initORM } from '#src/db/db'
 import { Email } from '#src/db/Email.entity'
 import { loadEnv, env } from '#src/env'
-import path from 'node:path'
 
 loadEnv() // Executed synchronously before the rest of your app loads
 
