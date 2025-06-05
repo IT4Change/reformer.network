@@ -58,6 +58,7 @@ const run = async () => {
 
   // eslint-disable-next-line no-console
   console.log('finished')
+  process.exit(0)
 }
 
 void run()
