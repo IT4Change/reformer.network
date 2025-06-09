@@ -44,6 +44,15 @@ services:
       INVITE_REGISTRATION: "true"
       CATEGORIES_ACTIVE: "true"
       MAX_PINNED_POSTS: "3"
+      SMTP_HOST: "mailserver"
+      SMTP_PORT: "1025"
+      SMTP_IGNORE_TLS: "true"
+      SMTP_USERNAME:
+      SMTP_PASSWORD:
+      SMTP_MAX_CONNECTIONS: "1"
+      SMTP_MAX_MESSAGES: "10"
+      EMAIL_DEFAULT_SENDER: "reformer@ocelot.social"
+      EMAIL_SUPPORT: "reformer@ocelot.social"
     ports:
       - 4000:4000
     depends_on:
@@ -106,6 +115,12 @@ services:
       DB_URL: mysql://root:@database:3306/badge-lookup
       SECRET_REQUEST: SOME-SECRET
       SECRET_SUBMIT: SOME-SECRET
+
+  mailserver:
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
 
 volumes:
   db_vol:
