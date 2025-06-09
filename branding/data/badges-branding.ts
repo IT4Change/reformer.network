@@ -35,7 +35,7 @@ export const trophies = [
     icon: '/img/badges/trophy_blue_nachweisexpress.svg',
   },
   {
-    id: 'trophy_blue_rundfunkalarm.svg',
+    id: 'trophy_blue_rundfunkalarm',
     type: 'trophy',
     description: 'Hat bei rundfunkalarm.de mitgemacht',
     icon: '/img/badges/trophy_blue_rundfunkalarm.svg',
