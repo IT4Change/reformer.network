@@ -248,6 +248,7 @@ body.page-name-password-reset-request {
   background-image: url('~@/static/img/RefNet-Hero_16x9_desktop_1920x1080.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 @media only screen and (max-width: 900px) {
@@ -320,6 +321,9 @@ $text-box-width-mobile: 280px;
   left: calc(-1 * $text-box-shift-x);
   padding-top: calc($text-box-shift-padding / 2);
 }
+.registration-slider > article:before {
+  top: -35px;
+}
 
 @media only screen and (max-width: 1200px) {
   .login-page:before,
@@ -349,5 +353,14 @@ $text-box-width-mobile: 280px;
 .login-page:before,
 .registration-page:before {
   font-weight: bold;
+}
+.back-link a {
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgb(0 0 0 / 60%);
+  &:hover {
+    text-decoration: underline !important;
+  }
 }
 // ^^^
