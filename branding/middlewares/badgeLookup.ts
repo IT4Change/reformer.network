@@ -82,6 +82,9 @@ export default {
     login: async (resolve, root, args, context: Context, info) => {
       const { email } = args
       const resolved = await resolve(root, args, context, info)
+      if (resolved.id && resolved.locationName) {
+        void assignVerificationBadge(resolved.id, root, context, info)
+      }
       void assignBadges(email, context)
       return resolved
     },
