@@ -82,9 +82,6 @@ export default {
     login: async (resolve, root, args, context: Context, info) => {
       const { email } = args
       const resolved = await resolve(root, args, context, info)
-      if (resolved.id && resolved.locationName) {
-        void assignVerificationBadge(resolved.id, root, context, info)
-      }
       void assignBadges(email, context)
       return resolved
     },
@@ -97,5 +94,14 @@ export default {
       void assignBadges(email, context)
       return resolved
     },
+  },
+  Query: {
+    currentUser: async (resolve, root, args, context: Context, info) => {
+      const resolved = await resolve(root, args, context, info)
+      if (resolved.id && resolved.locationName && !resolved.badgeVerification) {
+        void assignVerificationBadge(resolved.id, root, context, info)
+      }
+      return resolved
+    }
   },
 }
