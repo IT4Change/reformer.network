@@ -3,9 +3,13 @@ environments:
   default:
     values:
       - ./environments/default.yaml.gotmpl
+    secrets:
+      - ./secrets/ocelot.default.yaml
   production:
     values:
       - ./environments/production.yaml.gotmpl
+    secrets:
+      - ./secrets/ocelot.production.yaml
 ---
 repositories:
   - name: ocelot-social
