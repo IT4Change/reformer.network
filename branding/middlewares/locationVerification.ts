@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import badgesResolver from '@graphql/resolvers/badges'
-import { Context } from '@src/server'
+import { Context } from '@src/context'
 
 const {
   Mutation: { setVerificationBadge },

@@ -10,7 +10,7 @@ import fetch from 'node-fetch'
 // eslint-disable-next-line import/no-cycle
 import badgesResolver from '@graphql/resolvers/badges'
 import normalizeEmail from '@graphql/resolvers/helpers/normalizeEmail'
-import { Context } from '@src/server'
+import { Context } from '@src/context'
 
 import { assignVerificationBadge } from './locationVerification'
 
