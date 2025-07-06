@@ -30,7 +30,7 @@ const assignBadges = async (email: string, context: Context) => {
   }
 
   // We need the user for the resolver call. We attribute the badge as user: 0
-  context.user = { id: 0 }
+  context.user = { id: 'badge-lookup' }
 
   const normalizedEmail = normalizeEmail(email)
   const hash = crypto.createHash('sha256').update(normalizedEmail).digest('hex')
