@@ -1,11 +1,23 @@
-#{{ $branded_image_tag:= env "BRANDED_IMAGE_TAG" | default (exec "../scripts/branded_image_tag.sh" (list) | trim) }}
-#{{ $ocelot_image_tag := env "OCELOT_IMAGE_TAG" | default  (exec "../scripts/ocelot_image_tag.sh" (list) | trim) }}
 {{ $image_tag := env "IMAGE_TAG" | default  (exec "../scripts/branded_image_tag.sh" (list) | trim) }}
 
-domain: reformer.network
-redirect_domains: | # i don't understand it, but its the way to get it to work: https://stackoverflow.com/a/52840704
-    ["www.reformer.network"]
-namespace: reformer-network
-#image_tag: {{ env "IMAGE_TAG" | default (printf "ocelot-%s--branded-%s" $ocelot_image_tag $branded_image_tag) }}
-image_tag: {{ $image_tag }}
-github_repository: IT4Change/reformer.network
+deploy:
+    GITHUB_REPOSITORY: it4change/reformer.network
+    IMAGE_TAG: {{ $image_tag }}
+    DOMAIN: reformer.network
+    REDIRECT_DOMAINS: |
+        ["www.reformer.network"]
+    NAMESPACE: reformer-network
+    RELEASE_NAME_OCELOT: reformer-ocelot
+    NEO4J_STORAGE: "5Gi"
+
+ocelot:
+    options:
+        PRODUCTION_DB_CLEAN_ALLOW: "false"
+        PUBLIC_REGISTRATION: "false"
+        INVITE_REGISTRATION: "true"
+        CATEGORIES_ACTIVE: "true"
+        MAX_PINNED_POSTS: "3"
+        BADGES_ENABLED: "true"
+        NETWORK_NAME: "Reformer.network"
+        ASK_FOR_REAL_NAME: "true"
+        REQUIRE_LOCATION: "true"

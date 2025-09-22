@@ -16,25 +16,25 @@ repositories:
     url: git+https://github.com/Ocelot-Social-Community/Ocelot-Social@deployment/helm/charts
 
 releases:
-  - name: reformer-ocelot
-    namespace: {{ .StateValues.namespace }}
+  - name: {{ .StateValues.deploy.RELEASE_NAME_OCELOT }}
+    namespace: {{ .StateValues.deploy.NAMESPACE }}
     chart: ocelot-social/ocelot-social
     values:
     - ./values/ocelot.yaml.gotmpl
     secrets:
-    - ./secrets/ocelot.yaml
     - ./secrets/ocelot.yaml.gotmpl
+    - ./secrets/ocelot.additional.yaml.gotmpl
 
   - name: ocelot-neo4j
-    namespace: {{ .StateValues.namespace }}
+    namespace: {{ .StateValues.deploy.NAMESPACE }}
     chart: ocelot-social/ocelot-neo4j
     values:
     - ./values/ocelot.yaml.gotmpl
     secrets:
-    - ./secrets/ocelot.yaml
+    - ./secrets/ocelot.yaml.gotmpl
 
   - name: badge-lookup
-    namespace: {{ .StateValues.namespace }}
+    namespace: {{ .StateValues.deploy.NAMESPACE }}
     chart: ./charts/badge-lookup
     values:
     - ./values/reformer.network.yaml.gotmpl
@@ -42,7 +42,7 @@ releases:
     - ./secrets/reformer.network.yaml
 
   - name: database
-    namespace: {{ .StateValues.namespace }}
+    namespace: {{ .StateValues.deploy.NAMESPACE }}
     chart: ./charts/database
     values:
     - ./values/reformer.network.yaml.gotmpl

@@ -1,6 +1,6 @@
 global:
   image:
-    tag: {{ .StateValues.image_tag }}
+    tag: {{ .StateValues.deploy.IMAGE_TAG }}
     pullPolicy: Always
 
 badgelookup:

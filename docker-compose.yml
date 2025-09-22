@@ -32,12 +32,11 @@ services:
       args:
         OCELOT_VERSION: ${OCELOT_VERSION:-master}
     environment:
-      CLIENT_URI: http://webapp:3000
+      CLIENT_URI: http://localhost:3000
       GRAPHQL_URI: http://backend:4000
       NEO4J_URI: bolt://neo4j:7687
       MAPBOX_TOKEN: "pk.eyJ1IjoiYnVzZmFrdG9yIiwiYSI6ImNraDNiM3JxcDBhaWQydG1uczhpZWtpOW4ifQ.7TNRTO-o9aK1Y6MyW_Nd4g"
       JWT_SECRET: "b/&&7b78BF&fv/Vd"
-      PRIVATE_KEY_PASSPHRASE: "a7dsf78sadg87ad87sfagsadg78"
       BADGE_ATTRIBUTION_SERVICE_URL: 'http://badge-lookup:4000/badges'
       BADGE_ATTRIBUTION_SERVICE_SECRET: 'SOME-SECRET'
       PUBLIC_REGISTRATION: "false"
