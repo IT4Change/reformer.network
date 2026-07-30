@@ -1,0 +1,289 @@
+/* Reformer.network — brand stylesheet, injected at RUNTIME (listed in brand.config.ts `assets.css`).
+ *
+ * Ported from the former build-time overlay assets/styles/imports/_branding.scss, which the old
+ * Dockerfile copied over webapp/ before `yarn build`. The nuxt bundle is brand-agnostic now, so that
+ * file stopped applying entirely — everything here would otherwise render vanilla.
+ *
+ * What is NOT in this file: the base palette and the font families. Those are framework THEME TOKENS
+ * and live in brand.config.ts `theme.cssVars`, so they re-theme the webapp AND packages/ui at once.
+ * Rules below read var(--…) wherever a token exists, so a live brand switch stays consistent; the
+ * remaining literals are colours the framework has no token for (tertiary/teal, greys, hero copy).
+ *
+ * Sass is gone: `$variables` are resolved to their values, `color.adjust(x, $lightness: -n%)` to the
+ * colour it produced, nested `&:hover` blocks are flattened, and `~@/static/img/…` asset URLs point at
+ * the brand's served folder (../img/… relative to this file).
+ */
+
+.vac-avatar {
+  background-color: var(--color-secondary) !important;
+}
+
+/* "a" link colors */
+a {
+  color: var(--color-primary);
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+.base-button.--circle.post-add-button-top {
+  background-color: var(--color-secondary-active);
+  border-color: var(--color-secondary-active);
+}
+a:hover > .base-button.--circle.post-add-button-top {
+  background-color: var(--color-secondary);
+  border-color: rgb(25, 26, 24);
+}
+
+/* ds-menu-item link colors */
+a.ds-menu-item-link {
+  color: var(--color-secondary);
+}
+a:hover.ds-menu-item-link {
+  color: black;
+}
+.ds-menu-item-link.router-link-exact-active {
+  color: var(--color-secondary);
+  border-left-color: var(--color-secondary);
+}
+
+.v-popover.open .trigger a {
+  color: var(--color-primary);
+}
+
+.main-navigation a {
+  color: white;
+}
+.main-navigation .router-link-exact-active {
+  color: var(--color-secondary) !important;
+}
+
+.main-navigation .locale-menu {
+  color: white;
+}
+
+.main-navigation .base-button {
+  color: white;
+}
+
+.hc-hashtag a {
+  color: var(--color-primary);
+}
+.hc-hashtag a:hover {
+  color: var(--color-primary-hover);
+}
+
+.user-teaser .info {
+  a .slug {
+    color: var(--color-secondary);
+  }
+  a:hover .slug {
+    color: black;
+  }
+}
+.profile-avatar.--no-image {
+  background-color: var(--color-secondary);
+}
+.profile-avatar.--no-image .initials {
+  font-weight: 700;
+}
+.profile-page-avatar.profile-avatar.--no-image {
+  background-color: var(--color-primary);
+}
+.profile-page-avatar.profile-avatar.--no-image .initials {
+  color: var(--color-primary-contrast);
+}
+
+#footer {
+  background-color: var(--color-secondary-active);
+}
+#footer a {
+  color: white;
+  font-weight: 500;
+}
+#footer a:hover {
+  color: rgb(230, 230, 230);
+}
+
+.avatar-menu .profile-avatar {
+  color: var(--color-primary);
+}
+
+.profile-avatar .initials {
+  color: var(--color-primary);
+}
+
+/* chips with primary color */
+.ds-chip-primary {
+  background-color: rgb(0, 168, 181);
+}
+
+/* active tab border bottom color */
+div.tab-navigation li.Tabs__tab {
+  border-bottom-color: var(--color-primary);
+}
+
+/* ds-button with primary color */
+.ds-button-primary {
+  background-color: var(--color-primary);
+}
+.ds-button-primary:hover {
+  background-color: rgb(0, 168, 181);
+}
+
+/* color of active filter tags in post teaser */
+span.category-tag.filterActive {
+  background-color: var(--color-primary);
+}
+
+/* input */
+div.ds-input-wrap > input:focus-within.ds-input {
+  border-color: var(--color-primary);
+}
+.ds-input:focus {
+  border-color: var(--color-primary);
+}
+.ds-form-item.ds-input-has-focus .ds-select,
+.ds-form-item.ds-input-has-focus .ds-select-dropdown {
+  border-color: var(--color-primary);
+}
+/* div .ds-form-item .ds-input-has-focus { */
+/*   border-color: var(--color-primary); */
+/* } */
+/* div.ds-input-has-focus { */
+/*   border-color: var(--color-primary); */
+/* } */
+/* div.ds-select:focus { */
+/*   border-color: var(--color-primary); */
+/* } */
+
+/* checkbox */
+[type="checkbox"] {
+  accent-color: var(--color-primary-hover);
+}
+
+.editor .base-button {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.editor .base-button:hover {
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+
+body.page-name-login,
+body.page-name-registration,
+body.page-name-password-reset-request {
+  background-image: url('../img/RefNet-Hero_16x9_desktop_1920x1080.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 900px) {
+  body.page-name-login,
+  body.page-name-registration,
+  body.page-name-password-reset-request {
+    background-image: url('../img/RefNet-Hero_3x4_mobile_900x1200.jpg');
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body.page-name-login,
+  body.page-name-registration,
+  body.page-name-password-reset-request {
+    background-image: url('../img/RefNet-Hero_2x3_mobile_800x1200.jpg');
+  }
+}
+/* CSS Hack for removing quote block */
+.login-form blockquote {
+  display: none;
+}
+/* ^^^ */
+/* CSS Hack for adding text box */
+
+@media only screen and (min-width: 1201px) {
+  .login-form,
+  .registration-slider{
+    width: unset !important;
+    max-width: unset !important;
+    padding-left: 500px;
+  }
+}
+
+.login-form > article,
+.registration-slider > article {
+  overflow: visible;
+}
+
+.login-page:before,
+.login-form > article:before,
+.registration-page:before,
+.registration-slider > article:before {
+  color: #ffffff;
+  padding: 24px;
+  display: block;
+  width: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.login-page:before,
+.registration-page:before {
+  content: 'Mitdenken.\A Mitreden.\A Mitwirken.';
+  white-space: pre;
+  font-size: 48px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.login-form > article:before,
+.registration-slider > article:before {
+  content: 'Reformer.network - gemeinsam verändern wir die Gesellschaft.';
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: -500px;
+  padding-top: 12px;
+}
+.registration-slider > article:before {
+  top: -35px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .login-page:before,
+  .login-form > article:before,
+  .registration-page:before,
+  .registration-slider > article:before {
+    margin: 0 auto;
+    width: 280px;
+  }
+  .login-page:before,
+  .registration-page:before {
+    font-size: 32px;
+  }
+  .login-form > article:before,
+  .registration-slider > article:before {
+    font-size: 16px;
+    top: -160px;
+    left: 0;
+    right: 0;
+  }
+  .login-form,
+  .registration-slider {
+    padding-top: 160px;
+  }
+}
+
+.login-page:before,
+.registration-page:before {
+  font-weight: bold;
+}
+.back-link a {
+  color: white !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgb(0 0 0 / 60%);
+}
+.back-link a:hover {
+  text-decoration: underline !important;
+}
+/* ^^^ */

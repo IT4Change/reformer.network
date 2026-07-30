@@ -21,3 +21,18 @@ ocelot:
         NETWORK_NAME: "Reformer.network"
         ASK_FOR_REAL_NAME: "true"
         REQUIRE_LOCATION: "true"
+        # Ported from branding/constants/: filter.js (SHOW_CONTENT_FILTER_*) and groups.js
+        # (SHOW_GROUP_BUTTON_IN_HEADER) were brand constants until 3.13 — they are deployment ENV now.
+        SHOW_CONTENT_FILTER_HEADER_MENU: "true"
+        SHOW_CONTENT_FILTER_MASONRY_GRID: "false"
+        SHOW_GROUP_BUTTON_IN_HEADER: "true"
+        # Features that did not exist at 3.13. API keys stay OFF (the framework default) rather than
+        # being switched on silently; the per-user cap only matters once they are enabled.
+        API_KEYS_ENABLED: "false"
+        API_KEYS_MAX_PER_USER: "5"
+        MAX_GROUP_PINNED_POSTS: "1"
+        # Contact identity, from branding/constants/emails.js — e-mail/link config, not brand design,
+        # so it is ENV in the new mechanism. Without it the backend falls back to ocelot.social.
+        SUPPORT_EMAIL: "support@reformer.network"
+        SUPPORT_LINK: "https://reformer.network/support"
+        ORGANIZATION_LINK: "https://reformer.network/organization"

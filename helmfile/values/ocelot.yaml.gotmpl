@@ -34,6 +34,15 @@ webapp:
     NETWORK_NAME: {{ .StateValues.ocelot.options.NETWORK_NAME | quote }}
     ASK_FOR_REAL_NAME: {{ .StateValues.ocelot.options.ASK_FOR_REAL_NAME | quote }}
     REQUIRE_LOCATION: {{ .StateValues.ocelot.options.REQUIRE_LOCATION | quote }}
+    SHOW_CONTENT_FILTER_HEADER_MENU: {{ .StateValues.ocelot.options.SHOW_CONTENT_FILTER_HEADER_MENU | quote }}
+    SHOW_CONTENT_FILTER_MASONRY_GRID: {{ .StateValues.ocelot.options.SHOW_CONTENT_FILTER_MASONRY_GRID | quote }}
+    SHOW_GROUP_BUTTON_IN_HEADER: {{ .StateValues.ocelot.options.SHOW_GROUP_BUTTON_IN_HEADER | quote }}
+    API_KEYS_ENABLED: {{ .StateValues.ocelot.options.API_KEYS_ENABLED | quote }}
+    API_KEYS_MAX_PER_USER: {{ .StateValues.ocelot.options.API_KEYS_MAX_PER_USER | quote }}
+    MAX_GROUP_PINNED_POSTS: {{ .StateValues.ocelot.options.MAX_GROUP_PINNED_POSTS | quote }}
+    SUPPORT_EMAIL: {{ .StateValues.ocelot.options.SUPPORT_EMAIL | quote }}
+    SUPPORT_LINK: {{ .StateValues.ocelot.options.SUPPORT_LINK | quote }}
+    ORGANIZATION_LINK: {{ .StateValues.ocelot.options.ORGANIZATION_LINK | quote }}
 
 maintenance:
   image:
