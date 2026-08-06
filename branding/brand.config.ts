@@ -50,44 +50,6 @@ export default defineBranding({
   // rgb(0,168,181) (the old $color-tertiary, used as the hover/accent), near-black = rgb(56,57,55)
   // (secondary, header + donation bar). Values are the resolved Sass output of the old variable graph.
   theme: {
-    cssVars: {
-      'color-primary': 'rgb(239, 124, 0)',
-      // $color-primary-light was $color-tertiary — the teal used for links-on-hover, chat icons and
-      // the "green" toast.
-      'color-primary-hover': 'rgb(0, 168, 181)',
-      'color-primary-active': 'rgb(255, 172, 23)',
-      'color-primary-contrast': 'rgb(255, 238, 212)',
-      'color-secondary': 'rgb(56, 57, 55)',
-      'color-secondary-active': 'rgb(135, 135, 135)',
-      'color-secondary-contrast': 'rgb(226, 230, 218)',
-      // Was metadata.THEME_COLOR (rgb(56,57,55)) — the browser-chrome / PWA colour follows
-      // color-primary now, so the header background keeps the old value explicitly.
-      'color-header-background': 'rgb(56, 57, 55)',
-      'color-donation-bar': 'rgb(56, 57, 55)',
-      'color-toast-green': 'rgb(0, 168, 181)',
-      'color-ribbon-article': 'rgb(0, 168, 181)',
-      'chat-message-bg-me': 'rgb(182, 228, 234)',
-      'chat-sidemenu-background-active': 'rgb(182, 228, 234)',
-      'chat-message-checkmark-seen': 'var(--color-primary)',
-      'chat-message-checkmark': 'rgb(255, 255, 255)',
-      'chat-room-color-counter-badge': 'var(--color-primary-contrast)',
-      'chat-room-background-counter-badge': 'var(--color-primary)',
-      'font-family-heading': "'Inter', Helvetica, Arial, Lucida, sans-serif",
-      'font-family-text': "'Inter', Helvetica, Arial, Lucida, sans-serif",
-    },
-    fontFaces: [
-      {
-        family: 'Inter',
-        src: 'assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf',
-        format: 'truetype',
-      },
-      {
-        family: 'Inter',
-        src: 'assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf',
-        style: 'italic',
-        format: 'truetype',
-      },
-    ],
   },
   metadata: {
     applicationName: 'Reformer.network',
@@ -95,7 +57,6 @@ export default defineBranding({
     applicationDescription: 'Reformer.network',
     organizationName: 'Stichting Rudulin',
     organizationJurisdiction: 'Amsterdam',
-    cookieName: 'reformer-network-token',
   },
   group: {
     // stricter than the default (3): require a longer group description.
@@ -137,7 +98,7 @@ export default defineBranding({
     ],
   },
   assets: {
-    css: ['assets/css/branding.css'],
+    css: ['assets/css/theme.css', 'assets/css/branding.css'],
     html,
     favicon: 'assets/favicon.ico',
   },

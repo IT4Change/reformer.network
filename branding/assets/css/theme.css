@@ -1,0 +1,49 @@
+/*
+ * Runtime theme for this brand: CSS custom properties, authored as CSS.
+ *
+ * This file is the only source for the theme. When packing the archive the build raises the `:root`
+ * selector below to `:root:root`, so these values outrank the framework defaults regardless of load
+ * order, and it reads `--color-primary` out for the PWA/browser-chrome colour. Every property the
+ * framework declares can be set here — the admin lists them under Branding → theme.
+ */
+
+/*
+ * Web fonts, as plain CSS. The url() is relative to THIS stylesheet, which the webapp serves from
+ * /branding/<id>/assets/css/ — so the browser resolves it to the brand's own fonts directory with
+ * no path rewriting by the build (which is what theme.fontFaces used to need).
+ */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-style: italic;
+}
+
+:root {
+  --color-primary: rgb(239, 124, 0);
+  /* $color-primary-light was $color-tertiary — the teal used for links-on-hover, chat icons and */
+  /* the "green" toast. */
+  --color-primary-hover: rgb(0, 168, 181);
+  --color-primary-active: rgb(255, 172, 23);
+  --color-primary-contrast: rgb(255, 238, 212);
+  --color-secondary: rgb(56, 57, 55);
+  --color-secondary-active: rgb(135, 135, 135);
+  --color-secondary-contrast: rgb(226, 230, 218);
+  /* Was metadata.THEME_COLOR (rgb(56,57,55)) — the browser-chrome / PWA colour follows */
+  /* color-primary now, so the header background keeps the old value explicitly. */
+  --color-header-background: rgb(56, 57, 55);
+  --color-donation-bar: rgb(56, 57, 55);
+  --color-toast-green: rgb(0, 168, 181);
+  --color-ribbon-article: rgb(0, 168, 181);
+  --chat-message-bg-me: rgb(182, 228, 234);
+  --chat-sidemenu-background-active: rgb(182, 228, 234);
+  --chat-message-checkmark-seen: var(--color-primary);
+  --chat-message-checkmark: rgb(255, 255, 255);
+  --chat-room-color-counter-badge: var(--color-primary-contrast);
+  --chat-room-background-counter-badge: var(--color-primary);
+  --font-family-heading: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+  --font-family-text: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+}
