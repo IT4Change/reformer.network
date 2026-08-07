@@ -13,12 +13,13 @@
  * no path rewriting by the build (which is what theme.fontFaces used to need).
  */
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
   font-style: italic;
 }
 
@@ -44,6 +45,8 @@
   --chat-message-checkmark: rgb(255, 255, 255);
   --chat-room-color-counter-badge: var(--color-primary-contrast);
   --chat-room-background-counter-badge: var(--color-primary);
-  --font-family-heading: 'Inter', Helvetica, Arial, Lucida, sans-serif;
-  --font-family-text: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+  --font-family-heading: "Inter", Helvetica, Arial, Lucida, sans-serif;
+  --font-family-text: "Inter", Helvetica, Arial, Lucida, sans-serif;
+  --color-footer-background: var(--color-secondary-active);
+  --color-footer-link: var(--color-neutral-100);
 }

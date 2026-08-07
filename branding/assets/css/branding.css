@@ -26,27 +26,6 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
-.base-button.--circle.post-add-button-top {
-  background-color: var(--color-secondary-active);
-  border-color: var(--color-secondary-active);
-}
-a:hover > .base-button.--circle.post-add-button-top {
-  background-color: var(--color-secondary);
-  border-color: rgb(25, 26, 24);
-}
-
-/* ds-menu-item link colors */
-a.ds-menu-item-link {
-  color: var(--color-secondary);
-}
-a:hover.ds-menu-item-link {
-  color: black;
-}
-.ds-menu-item-link.router-link-exact-active {
-  color: var(--color-secondary);
-  border-left-color: var(--color-secondary);
-}
-
 .v-popover.open .trigger a {
   color: var(--color-primary);
 }
@@ -62,10 +41,6 @@ a:hover.ds-menu-item-link {
   color: white;
 }
 
-.main-navigation .base-button {
-  color: white;
-}
-
 .hc-hashtag a {
   color: var(--color-primary);
 }
@@ -73,7 +48,7 @@ a:hover.ds-menu-item-link {
   color: var(--color-primary-hover);
 }
 
-.user-teaser .info {
+.user-avatar .info {
   a .slug {
     color: var(--color-secondary);
   }
@@ -81,54 +56,37 @@ a:hover.ds-menu-item-link {
     color: black;
   }
 }
-.profile-avatar.--no-image {
+.avatar-image.--no-image {
   background-color: var(--color-secondary);
 }
-.profile-avatar.--no-image .initials {
+.avatar-image.--no-image .initials {
   font-weight: 700;
 }
-.profile-page-avatar.profile-avatar.--no-image {
+.profile-page-avatar.avatar-image.--no-image {
   background-color: var(--color-primary);
 }
-.profile-page-avatar.profile-avatar.--no-image .initials {
+.profile-page-avatar.avatar-image.--no-image .initials {
   color: var(--color-primary-contrast);
 }
 
-#footer {
-  background-color: var(--color-secondary-active);
-}
 #footer a {
-  color: white;
   font-weight: 500;
 }
 #footer a:hover {
   color: rgb(230, 230, 230);
 }
 
-.avatar-menu .profile-avatar {
+.avatar-menu .avatar-image {
   color: var(--color-primary);
 }
 
-.profile-avatar .initials {
+.avatar-image .initials {
   color: var(--color-primary);
-}
-
-/* chips with primary color */
-.ds-chip-primary {
-  background-color: rgb(0, 168, 181);
 }
 
 /* active tab border bottom color */
 div.tab-navigation li.Tabs__tab {
   border-bottom-color: var(--color-primary);
-}
-
-/* ds-button with primary color */
-.ds-button-primary {
-  background-color: var(--color-primary);
-}
-.ds-button-primary:hover {
-  background-color: rgb(0, 168, 181);
 }
 
 /* color of active filter tags in post teaser */
@@ -147,6 +105,7 @@ div.ds-input-wrap > input:focus-within.ds-input {
 .ds-form-item.ds-input-has-focus .ds-select-dropdown {
   border-color: var(--color-primary);
 }
+
 /* div .ds-form-item .ds-input-has-focus { */
 /*   border-color: var(--color-primary); */
 /* } */
@@ -155,27 +114,16 @@ div.ds-input-wrap > input:focus-within.ds-input {
 /* } */
 /* div.ds-select:focus { */
 /*   border-color: var(--color-primary); */
-/* } */
 
-/* checkbox */
+/* } */ /* checkbox */
 [type="checkbox"] {
   accent-color: var(--color-primary-hover);
-}
-
-.editor .base-button {
-  color: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-.editor .base-button:hover {
-  color: white;
-  background-color: black;
-  border-color: black;
 }
 
 body.page-name-login,
 body.page-name-registration,
 body.page-name-password-reset-request {
-  background-image: url('../img/RefNet-Hero_16x9_desktop_1920x1080.jpg');
+  background-image: url("../img/RefNet-Hero_16x9_desktop_1920x1080.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -185,7 +133,7 @@ body.page-name-password-reset-request {
   body.page-name-login,
   body.page-name-registration,
   body.page-name-password-reset-request {
-    background-image: url('../img/RefNet-Hero_3x4_mobile_900x1200.jpg');
+    background-image: url("../img/RefNet-Hero_3x4_mobile_900x1200.jpg");
   }
 }
 
@@ -193,19 +141,20 @@ body.page-name-password-reset-request {
   body.page-name-login,
   body.page-name-registration,
   body.page-name-password-reset-request {
-    background-image: url('../img/RefNet-Hero_2x3_mobile_800x1200.jpg');
+    background-image: url("../img/RefNet-Hero_2x3_mobile_800x1200.jpg");
   }
 }
 /* CSS Hack for removing quote block */
 .login-form blockquote {
   display: none;
 }
-/* ^^^ */
-/* CSS Hack for adding text box */
 
+/* ^^^ */
+
+/* CSS Hack for adding text box */
 @media only screen and (min-width: 1201px) {
   .login-form,
-  .registration-slider{
+  .registration-slider {
     width: unset !important;
     max-width: unset !important;
     padding-left: 500px;
@@ -229,7 +178,7 @@ body.page-name-password-reset-request {
 }
 .login-page:before,
 .registration-page:before {
-  content: 'Mitdenken.\A Mitreden.\A Mitwirken.';
+  content: "Mitdenken.\A Mitreden.\A Mitwirken.";
   white-space: pre;
   font-size: 48px;
   position: relative;
@@ -237,7 +186,7 @@ body.page-name-password-reset-request {
 }
 .login-form > article:before,
 .registration-slider > article:before {
-  content: 'Reformer.network - gemeinsam verändern wir die Gesellschaft.';
+  content: "Reformer.network - gemeinsam verändern wir die Gesellschaft.";
   font-size: 24px;
   position: absolute;
   top: 0;
